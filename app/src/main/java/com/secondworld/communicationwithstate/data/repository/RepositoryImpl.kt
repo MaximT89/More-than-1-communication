@@ -6,21 +6,12 @@ import com.secondworld.communicationwithstate.domain.repository.Repository
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(private val storage: Storage) : Repository {
-    override fun fetchManager(): Users.Manager {
-        return Users.Manager(storage.name())
-    }
 
-    override fun fetchProductManager(): Users.ProductManager {
-        return Users.ProductManager(storage.name())
-    }
+    override fun fetchManager(): Users.Manager = Users.Manager(storage.name())
 
-    override fun fetchAdmin(): Users.Admin {
-        return Users.Admin(storage.name())
-    }
+    override fun fetchProductManager(): Users.ProductManager = Users.ProductManager(storage.name())
 
-    override fun fetchDesigner(): Users.Designer {
-        return Users.Designer(storage.name())
-    }
+    override fun fetchAdmin(): Users.Admin = Users.Admin(storage.name())
 
-
+    override fun fetchDesigner(): Users.Designer = Users.Designer(storage.name())
 }

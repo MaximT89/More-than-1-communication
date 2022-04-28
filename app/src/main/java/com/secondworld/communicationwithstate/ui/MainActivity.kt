@@ -3,12 +3,8 @@ package com.secondworld.communicationwithstate.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.viewbinding.ViewBinding
-import com.google.android.material.snackbar.Snackbar
-import com.secondworld.communicationwithstate.R
 import com.secondworld.communicationwithstate.data.model.Users
 import com.secondworld.communicationwithstate.databinding.ActivityMainBinding
-import com.secondworld.communicationwithstate.domain.interactor.Interactor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.text.StringBuilder
 
