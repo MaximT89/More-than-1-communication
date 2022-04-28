@@ -1,40 +1,32 @@
 package com.secondworld.communicationwithstate.ui
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.activity.viewModels
+import com.secondworld.communicationwithstate.core.BaseActivity
 import com.secondworld.communicationwithstate.data.model.Users
 import com.secondworld.communicationwithstate.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.text.StringBuilder
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    lateinit var binding: ActivityMainBinding
+    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
+
     private val viewModel by viewModels<MainViewModel>()
     private val sbAdmin = StringBuilder()
     private val sbManager = StringBuilder()
     private val sbPm = StringBuilder()
     private val sbDesigner = StringBuilder()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        initView()
-        initObservers()
-    }
-
-    private fun initView() {
+    override fun initView() {
         binding.addAdmin.setOnClickListener { viewModel.mapAdmin() }
         binding.addManager.setOnClickListener { viewModel.mapManager() }
         binding.addDesigner.setOnClickListener { viewModel.mapDesigner() }
         binding.addPm.setOnClickListener { viewModel.mapProductManager() }
     }
 
-    private fun initObservers() {
+    override fun initObservers() {
 
         viewModel.observe(this) {
             when (it) {
