@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Communication With State</string>
+    <string name="exception">Unknown class</string>
+    <string name="admin">Admin</string>
+    <string name="manager">Manager</string>
+    <string name="product_manager">PM</string>
+    <string name="designer">Designer</string>
+</resources>
