@@ -27,7 +27,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initObservers() {
-
         viewModel.observe(this) {
             when (it) {
                 is Users.Admin -> updateUi(it)
@@ -39,7 +38,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun updateUi(it: Users) {
-
         when (it) {
             is Users.Admin -> binding.listAdmin.text = updateSb(sbAdmin, it.name)
             is Users.ProductManager -> binding.listPm.text = updateSb(sbPm, it.name)
