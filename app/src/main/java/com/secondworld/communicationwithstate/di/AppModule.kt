@@ -14,8 +14,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class AppModule {
 
     @Binds
-    abstract fun bindCommunicationUsers(communication: CommunicationUsers.UiUpdateUser) :
-            CommunicationUsers
+    abstract fun bindCommunicationUsers(communication: CommunicationUsers.UiUpdateUser) : CommunicationUsers
 
     @Binds
     abstract fun bindRepository(repository: RepositoryImpl) : Repository

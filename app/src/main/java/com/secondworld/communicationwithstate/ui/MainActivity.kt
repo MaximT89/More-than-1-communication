@@ -10,8 +10,7 @@ import com.secondworld.communicationwithstate.data.model.Users
 import com.secondworld.communicationwithstate.databinding.ActivityMainBinding
 import com.secondworld.communicationwithstate.domain.interactor.Interactor
 import dagger.hilt.android.AndroidEntryPoint
-import java.lang.Exception
-import java.lang.StringBuilder
+import kotlin.text.StringBuilder
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -41,9 +40,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObservers() {
 
-        viewModel.observe(this){
-
-            when(it){
+        viewModel.observe(this) {
+            when (it) {
                 is Users.Admin -> updateUi(it)
                 is Users.ProductManager -> updateUi(it)
                 is Users.Manager -> updateUi(it)
@@ -54,23 +52,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateUi(it: Users) {
 
-        when(it){
-            is Users.Admin -> {
-                sbAdmin.append(it.name).append("\n")
-                binding.listAdmin.text = sbAdmin.toString()
-            }
-            is Users.ProductManager -> {
-                sbPm.append(it.name).append("\n")
-                binding.listPm.text = sbPm.toString()
-            }
-            is Users.Designer -> {
-                sbDesigner.append(it.name).append("\n")
-                binding.listDesign.text = sbDesigner.toString()
-            }
-            is Users.Manager -> {
-                sbManager.append(it.name).append("\n")
-                binding.listManager.text = sbManager.toString()
-            }
+        when (it) {
+            is Users.Admin -> binding.listAdmin.text = updateSb(sbAdmin, it.name)
+            is Users.ProductManager -> binding.listPm.text = updateSb(sbPm, it.name)
+            is Users.Designer -> binding.listDesign.text = updateSb(sbDesigner, it.name)
+            is Users.Manager -> binding.listManager.text = updateSb(sbManager, it.name)
         }
+    }
+
+    private fun updateSb(sb: StringBuilder, text: String): String {
+        return sb.append(text).append("\n").toString()
     }
 }
