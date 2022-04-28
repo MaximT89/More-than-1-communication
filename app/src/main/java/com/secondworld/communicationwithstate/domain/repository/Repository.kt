@@ -1,8 +1,6 @@
 package com.secondworld.communicationwithstate.domain.repository
 
 import com.secondworld.communicationwithstate.data.model.Users
-import com.secondworld.communicationwithstate.data.storage.Storage
-import javax.inject.Inject
 
 interface Repository {
 

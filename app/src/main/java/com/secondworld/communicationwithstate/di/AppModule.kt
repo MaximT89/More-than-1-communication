@@ -1,6 +1,7 @@
 package com.secondworld.communicationwithstate.di
 
 import com.secondworld.communicationwithstate.data.repository.RepositoryImpl
+import com.secondworld.communicationwithstate.data.storage.Storage
 import com.secondworld.communicationwithstate.domain.repository.Repository
 import com.secondworld.communicationwithstate.ui.CommunicationUsers
 import dagger.Binds
@@ -18,4 +19,7 @@ abstract class AppModule {
 
     @Binds
     abstract fun bindRepository(repository: RepositoryImpl) : Repository
+
+    @Binds
+    abstract fun bindStorage(storage : Storage.Base) : Storage
 }

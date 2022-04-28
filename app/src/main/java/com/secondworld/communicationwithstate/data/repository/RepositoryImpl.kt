@@ -5,7 +5,7 @@ import com.secondworld.communicationwithstate.data.storage.Storage
 import com.secondworld.communicationwithstate.domain.repository.Repository
 import javax.inject.Inject
 
-class RepositoryImpl @Inject constructor(private val storage: Storage.Base) : Repository {
+class RepositoryImpl @Inject constructor(private val storage: Storage) : Repository {
     override fun fetchManager(): Users.Manager {
         return Users.Manager(storage.name())
     }
