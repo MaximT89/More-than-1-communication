@@ -5,4 +5,8 @@
     <string name="manager">Manager</string>
     <string name="product_manager">PM</string>
     <string name="designer">Designer</string>
+    <string name="add_admin">add admin</string>
+    <string name="add_manager">add manager</string>
+    <string name="add_pm">add pm</string>
+    <string name="add_designer">add designer</string>
 </resources>

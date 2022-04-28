@@ -160,7 +160,7 @@
                 android:layout_row="0"
                 android:layout_column="0"
                 android:layout_columnWeight="1"
-                android:text="add admin" />
+                android:text="@string/add_admin" />
 
             <Button
                 android:id="@+id/add_manager"
@@ -169,7 +169,7 @@
                 android:layout_row="0"
                 android:layout_column="1"
                 android:layout_columnWeight="1"
-                android:text="add manager" />
+                android:text="@string/add_manager" />
 
             <Button
                 android:id="@+id/add_pm"
@@ -178,7 +178,7 @@
                 android:layout_row="2"
                 android:layout_column="0"
                 android:layout_columnWeight="1"
-                android:text="add pm" />
+                android:text="@string/add_pm" />
 
             <Button
                 android:id="@+id/add_designer"
@@ -187,7 +187,7 @@
                 android:layout_row="2"
                 android:layout_column="1"
                 android:layout_columnWeight="1"
-                android:text="add designer" />
+                android:text="@string/add_designer" />
         </GridLayout>
 
 
