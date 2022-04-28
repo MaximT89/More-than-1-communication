@@ -60,7 +60,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateSb(sb: StringBuilder, text: String): String {
-        return sb.append(text).append("\n").toString()
-    }
+    private fun updateSb(sb: StringBuilder, text: String) = sb.append(text).append("\n").toString()
 }
